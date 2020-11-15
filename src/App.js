@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+
+import React, { Component } from 'react';
 import './App.css';
+import {makeStyles} from "@material-ui/core/styles";
+import {CssBaseline} from "@material-ui/core";
+import Header from "./components/Header";
+import ImageCard from "./components/ImageCard";
+import Box from "@material-ui/core/Box";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const useStyles = makeStyles((theme) => ({
+    root: {
+        minHeight: '100vh',
+        backgroundImage: `url('https://i.imgur.com/qQTslhF.gif')`,
+        backgroundRepeat: 'repeat-y-',
+        backgroundSize: 'cover',
+
+    },
+}));
+
+export default function App() {
+    const classes = useStyles();
+    return (
+            <div className={classes.root}>
+                <CssBaseline></CssBaseline>
+                <Header></Header>
+                <Box
+                    display="flex"
+                    justifyContent="flex-end"
+                >
+                <ImageCard />
+                </Box>
+            </div>
+        );
 }
-
-export default App;
