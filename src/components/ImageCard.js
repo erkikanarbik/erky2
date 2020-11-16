@@ -59,7 +59,7 @@ export default function ImageCard() {
         })
         FetchCovid().then(res => {
             let today = new Date().toISOString().slice(0, 10)
-            let yesterday = new Date(new Date().setDate(new Date().getDate()-2)).toISOString().slice(0, 10); // REMEMBER TO CHANGE -2 BACK TO -1
+            let yesterday = new Date(new Date().setDate(new Date().getDate()-1)).toISOString().slice(0, 10); // REMEMBER TO CHANGE -2 BACK TO -1
             console.log(today)
             let filtr = res.data.filter(lastdate => lastdate.StatisticsDate === today);
             console.log(filtr)
